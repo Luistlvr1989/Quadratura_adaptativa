@@ -1,15 +1,45 @@
 #include "quadratura_adaptativa.h"
 
+// [1-12]
 double fd(double x) {
-	return x;
+	int i, j;
+	double value = 0.0;
+
+	for(i = 0; i < 10; i++) {
+		value += pow(x, 2.0) + sin(x) * i;
+	}
+
+	return value;
 }
 
+// [5-10]
 double f1(double x) {
-	return x * x;
+	int i;
+	double value = 0.0, value1, value2;
+
+	for(i = 0; i < 3; i++) {
+		value1 = (log(x) + pow(x, 2.0)) * cos(x);
+		value2 = x * sin(x);
+
+		value += value1 * value2;
+	}
+	
+	return value;
 }
 
+// [2-34]
 double f2(double x) {
-	return sin(x);
+	int i, j;
+	double value = 0.0;
+	
+	for(i = 0; i < 5; i++) {
+		value += pow(x, 2.0) * sqrt(x);
+		
+		for(j = 0; j < 3; j++);
+			value += cos((double)j) * sin((double)j);
+	}
+
+	return value;
 }
 
 void* selectFunction(int function) {
