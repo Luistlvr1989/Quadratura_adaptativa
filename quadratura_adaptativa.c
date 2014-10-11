@@ -42,6 +42,16 @@ double f2(double x) {
 	return value;
 }
 
+// [2-5]
+/*double f3(double x) {
+	int i, j;
+	double value = 0.0;
+	
+	value = x * sin(x) + 10;
+
+	return value;
+}*/
+
 void* selectFunction(int function) {
 	switch(function) {
 		case 1:
@@ -49,6 +59,9 @@ void* selectFunction(int function) {
 
 		case 2:
 			return f2;
+
+		/*case 3:
+			return f3;*/
 
 		default:
 			return fd;

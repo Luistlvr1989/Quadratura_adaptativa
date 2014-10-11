@@ -137,6 +137,9 @@ void adaptativeQuadratureDynamic(double (*f)(double x)) {
 		if(empty || final_range <= range )
 			break;
 
+		if(empty)
+			continue;
+
 		local_a    = task.local_a;
 		local_b    = task.local_b;
 		local_mid  = (local_a + local_b) / 2.0;

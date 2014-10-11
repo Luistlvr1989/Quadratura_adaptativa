@@ -6,7 +6,9 @@
 #include <stdlib.h>     /* General Utilities */
 
 // Error threshold
-#define ERROR 1e-17
+//#define ERROR 1e-14
+//#define ERROR 1e-17
+#define ERROR 1e-20
 
 // Functions
 double fd(double x);
